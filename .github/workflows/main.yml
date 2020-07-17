@@ -38,7 +38,7 @@ jobs:
         npm test
     
     - name: Package
-      run: tar czvf real-value-app-0.1.0.$GITHUB_RUN_NUMBER.tgz src node_modules package.json lib public
+      run: tar czf real-value-app-0.1.0.$GITHUB_RUN_NUMBER.tgz src node_modules package.json lib public
 
     - uses: actions/upload-artifact@v2
       with:
