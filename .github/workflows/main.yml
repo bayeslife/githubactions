@@ -30,9 +30,8 @@ jobs:
         echo "::set-env PKG_NAME=real-value-app-0.1.0.$GITHUB_RUN_NUMBER.tgz"
         
     - name: Check variables
-      run: |
-        echo $GITHUB_RUN_NUMBER
-        echo $PKG_NAME
+      run: echo $GITHUB_RUN_NUMBER $PKG_NAME
+        
 
     # Build and Test
     - name: Run a multi-line script
