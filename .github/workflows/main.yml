@@ -28,7 +28,7 @@ jobs:
     # Check version
     - name: Check version
       run: |
-        echo $(GITHUB_RUN_NUMBER)
+        echo $GITHUB_RUN_NUMBER
         npm version
 
     # Build and Test
@@ -42,5 +42,5 @@ jobs:
 
     - uses: actions/upload-artifact@v2
       with:
-        name: real-value-app.0.1.0.$(GITHUB_RUN_NUMBER).tgz
-        path: real-value-app.0.1.0.$(GITHUB_RUN_NUMBER).tgz
+        name: real-value-app.0.1.0.GITHUB_RUN_NUMBER.tgz
+        path: real-value-app.0.1.0.GITHUB_RUN_NUMBER.tgz
