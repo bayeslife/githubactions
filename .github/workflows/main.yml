@@ -36,7 +36,8 @@ jobs:
 
     - name: Package
       #run: $( echo 'tar czf $PKG_NAME src node_modules package.json lib public' )
-      run: tar czf ${{env.PKG_NAME}} src node_modules package.json lib public
+      #run: tar czf ${{env.PKG_NAME}} src node_modules package.json lib public
+      run: tar czf ${{env.PKG_NAME}} src package.json lib public
      
     - uses: actions/upload-artifact@v2
       with:
