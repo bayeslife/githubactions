@@ -37,7 +37,7 @@ jobs:
     #     npm test
     
     - name: Package
-      run: ${{ format('tar czf {0} src node_modules package.json lib public',$PKG_NAME) }}
+      run: ${{ format('tar czf {0} src node_modules package.json lib public' ,env.PKG_NAME) }}
 
     - uses: actions/upload-artifact@v2
       with:
