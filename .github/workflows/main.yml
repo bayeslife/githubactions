@@ -27,7 +27,7 @@ jobs:
 
     - name: Inspect
       run: |
-        echo 'real-value-app-0.1.0.$GITHUB_RUN_NUMBER.tgz'
+        echo "real-value-app-0.1.0.${{GITHUB_RUN_NUMBER}}.tgz"
     
     - name: Set Variables
       run: |
