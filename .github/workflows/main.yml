@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env: 
-      PKG_NAME: real-value-app-0.1.0.$GITHUB_RUN_NUMBER.tgz
+      PKG_NAME: real-value-app-0.1.0.${{GITHUB_RUN_NUMBER}}.tgz
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
