@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env: 
-      PKG_NAME: ${{ 'real-value-app-0.1.0.'$github.run_id'.tgz' }}
+      PKG_NAME: ${{ format('real-value-app-0.1.0.{{0}}.tgz', github.run_id) }}
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
