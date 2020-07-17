@@ -25,7 +25,7 @@ jobs:
       with:
         node-version: '12'
 
-     - name: Inspect
+    - name: Inspect
       run: |
         echo 'real-value-app-0.1.0.$GITHUB_RUN_NUMBER.tgz'
     
