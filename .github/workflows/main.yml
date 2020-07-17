@@ -35,9 +35,11 @@ jobs:
       run: |
         npm install
         npm test
-        tar czvf  real-value-app.tgz src node_modules package.json lib public
+    
+    - name: Package
+      run: tar czvf real-value-app.tgz src node_modules package.json lib public
 
     - uses: actions/upload-artifact@v2
       with:
-        name: real-value-app.0.1.0.tgz
-        path: real-value-app.0.1.0.tgz
+        name: real-value-app.0.1.0.${GITHUB_RUN_NUMBER}.tgz
+        path: real-value-app.0.1.0..${GITHUB_RUN_NUMBER}.tgz
