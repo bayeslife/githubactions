@@ -31,7 +31,7 @@ jobs:
     
     - name: Set Variables
       run: |
-        echo ::set-env PKG_NAME=real-value-app-0.1.0.$GITHUB_RUN_NUMBER.tgz
+        echo ::set-env PKG_NAME=real-value-app-0.1.0.${{GITHUB_RUN_NUMBER}}.tgz
         
     - name: Check variables
       run: echo $GITHUB_RUN_NUMBER $PKG_NAME
