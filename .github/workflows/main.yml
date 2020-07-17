@@ -26,7 +26,7 @@ jobs:
         node-version: '12'
 
     - name: Set Variables
-      set-env: |
+      run: |
         echo "::set-env PKG_NAME=real-value-app-0.1.0.$GITHUB_RUN_NUMBER.tgz"
         
     - name: Check variables
