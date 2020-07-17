@@ -17,7 +17,8 @@ jobs:
     runs-on: ubuntu-latest
 
     env: 
-      PKG_NAME: ${{ format('real-value-app-0.1.0.{0}.tgz', github.run_number) }}
+      #PKG_NAME: ${{ format('real-value-app-0.1.0.{0}.tgz', github.run_number) }}
+      PKG_NAME: real-value-app-0.1.0.${{ github.run_number }}.tgz
       
     steps:
     - uses: actions/checkout@v2
