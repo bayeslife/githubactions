@@ -2,9 +2,6 @@
 
 name: GITHUB_ACTIONS_CICD_TALK
 
-env:
-  NODE_VERSION: '40.x'                # set this to the node version to use
-
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
 on:
@@ -24,7 +21,9 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
-
+    - uses: actions/setup-node@v2-beta
+      with:
+        node-version: '12'
 
     # Build and Test
     - name: Run a multi-line script
