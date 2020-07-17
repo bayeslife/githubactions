@@ -14,15 +14,12 @@ on:
 jobs:
   # This workflow contains a single job called "build"
   build:
-    # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
     env: 
-      PKG_NAME: ${{ format('real-value-app-0.1.0.{0}.tgz', github.run_id) }}
+      PKG_NAME: ${{ format('real-value-app-0.1.0.{0}.tgz', github.run_number) }}
 
-    # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
     - uses: actions/setup-node@v2-beta
       with:
@@ -30,25 +27,19 @@ jobs:
 
     - name: Inspect
       run: echo $PKG_NAME
-    
-    # - name: Set Variables
-    #   run: |
-    #     echo ::set-env PKG_NAME=real-value-app-0.1.0.${{GITHUB_RUN_NUMBER}}.tgz
-        
+            
     - name: Check variables
       run: echo $GITHUB_RUN_NUMBER $PKG_NAME
         
-
-    # Build and Test
-    - name: Run a multi-line script
+    - name: Build and Test
       run: |
         npm install
         npm test
     
     - name: Package
-      run: tar czf real-value-app-0.1.0.$GITHUB_RUN_NUMBER.tgz src node_modules package.json lib public
+      run: tar czf $PKG_NAME src node_modules package.json lib public
 
     - uses: actions/upload-artifact@v2
       with:
-        name: real-value-app.0.1.0.$GITHUB_RUN_NUMBER.tgz
-        path: real-value-app.0.1.0.$GITHUB_RUN_NUMBER.tgz
+        name: $PKG_NAME
+        path: $PKG_NAME
