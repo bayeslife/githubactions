@@ -40,6 +40,5 @@ jobs:
      
     - uses: actions/upload-artifact@v2
       with:
-        #name: $( echo PKG_NAME )
         name: ${{ env.PKG_NAME }}
-        path: $( echo PKG_NAME )
+        path: ${{ env.PKG_NAME }}
