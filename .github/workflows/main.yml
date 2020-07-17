@@ -42,4 +42,4 @@ jobs:
     - uses: actions/upload-artifact@v2
       with:
         name: real-value-app.0.1.0.${GITHUB_RUN_NUMBER}.tgz
-        path: real-value-app.0.1.0..${GITHUB_RUN_NUMBER}.tgz
+        path: real-value-app.0.1.0.${GITHUB_RUN_NUMBER}.tgz
