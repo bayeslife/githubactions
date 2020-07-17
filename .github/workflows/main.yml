@@ -31,10 +31,10 @@ jobs:
     - name: Check variables
       run: echo $GITHUB_RUN_NUMBER $PKG_NAME
         
-    # - name: Build and Test
-    #   run: |
-    #     npm install
-    #     npm test
+    - name: Build and Test
+      run: |
+        npm install
+        npm test
 
     - name: Package
       #run: ${{ format('tar czf {0} src node_modules package.json lib public' ,env.PKG_NAME) }}
@@ -42,5 +42,5 @@ jobs:
      
     - uses: actions/upload-artifact@v2
       with:
-        name: ${{ env.PKG_NAME }}
-        path: ${{ env.PKG_NAME }}
+        name: $( PKG_NAME )
+        path: $( PKG_NAME )
