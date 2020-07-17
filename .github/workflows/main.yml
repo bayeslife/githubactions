@@ -3,7 +3,7 @@
 name: GITHUB_ACTIONS_CICD_TALK
 
 env:
-  NODE_VERSION: '10.x'                # set this to the node version to use
+  NODE_VERSION: '40.x'                # set this to the node version to use
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
@@ -25,12 +25,9 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
 
-    # Runs a single command using the runners shell
-    - name: Run a one-line script
-      run: ls
 
-    # Runs a set of commands using the runners shell
+    # Build and Test
     - name: Run a multi-line script
       run: |
-        echo Add other actions to build
         npm install
+        npm test
