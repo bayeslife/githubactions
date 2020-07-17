@@ -18,7 +18,7 @@ jobs:
 
     env: 
       PKG_NAME_1: ${{ format('real-value-app-0.1.0.{0}.tgz', github.run_number) }}
-      PKG_NAME: $( echo "real-value-app-0.1.0.$GITHUB_RUN_NUMBER.tgz" )
+      PKG_NAME: ${{ echo "real-value-app-0.1.0.$GITHUB_RUN_NUMBER.tgz"  }}
 
     steps:
     - uses: actions/checkout@v2
