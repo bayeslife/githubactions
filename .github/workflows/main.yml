@@ -1,7 +1,6 @@
 # This is a basic workflow to build test and upload a release artifact
-#
 
-name: GITHUB_ACTIONS_CICD_TALK
+name: GITHUB_ACTIONS_CICD_HELLOWORLD
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
@@ -19,7 +18,7 @@ jobs:
 
     env: 
       #PKG_NAME: ${{ format('real-value-app-0.1.0.{0}.tgz', github.run_number) }}
-      PKG_NAME: real-value-app-0.1.0.${{ github.run_number }}.tgz
+      PKG_NAME: cicd-helloworld-0.1.0.${{ github.run_number }}.tgz
       
     steps:
     - uses: actions/checkout@v2
@@ -37,7 +36,7 @@ jobs:
 
     - name: Package
       #run: $( echo 'tar czf $PKG_NAME src node_modules package.json lib public' )
-      run: tar czf ${{env.PKG_NAME}} src node_modules package.json lib public
+      run: tar czf ${{env.PKG_NAME}} src node_modules package.json
       
     # - uses: actions/upload-artifact@v2
     #   with:
