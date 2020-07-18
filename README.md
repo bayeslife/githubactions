@@ -22,14 +22,14 @@ Goal of this repository:
 - Setting variables that are visible through the workflow was not obvious.  Using *env* section at the job level variables were available to all steps 
 ```
     env: 
-      PKG_NAME: real-value-app-0.1.0.${{ github.run_number }}.tgz
+      PKG_NAME: helloworld-0.1.0.${{ github.run_number }}.tgz
 ```
 - Accessing variables occurs via expressions which either were
  ```
        run: echo $GITHUB_RUN_NUMBER $PKG_NAME
 or
-        run: tar czf ${{env.PKG_NAME}} src node_modules package.json lib public
+        run: tar czf ${{env.PKG_NAME}} src node_modules package.json
 ```
-- Had issues where I created a release but wasnt able to push any further changes to repo
+- Had issues where I created a release but wasnt able to push any further changes to repo.  This appears to be been that I copied code which used the branch name as the tag.  I deleted the release and change the artifact tag to be the PKG_NAME
 
-
+- Not yet sure I understand the difference between these 2 expression statement : $() vs ${{ }}

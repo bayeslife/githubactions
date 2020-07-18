@@ -1,6 +1,5 @@
 import { describe } from 'riteway'
 
-const debug = require('debug')('test')
 
 describe('Some Test', async (assert) => {
   
