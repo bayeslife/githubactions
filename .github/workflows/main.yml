@@ -50,8 +50,8 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
-        tag_name: ${{ 0.1.0-$github.ref }}
-        release_name: Release ${{ 0.1.0-$github.ref }}
+        tag_name: ${{ env.PKG_NAME }}
+        release_name: Release ${{ env.PKG_NAME }}
         draft: false
         prerelease: false
 
