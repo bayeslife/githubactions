@@ -1,6 +1,6 @@
 {
   "name": "real-value-full-stack",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": true,
   "dependencies": {
     "@aurecon/design": "file:lib/aurecon-design-2.0.8.tgz",
